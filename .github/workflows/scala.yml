@@ -20,6 +20,6 @@ jobs:
         username: naveenlata
         password: Molina@2032
         database: githubactions/SQLGitHub
-        sql-file: INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh7',7,7,7,'test1',7,'test7')
+        sql-file: <INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh7',7,7,7,'test1',7,'test7')>
    
    
