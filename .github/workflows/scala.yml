@@ -17,9 +17,7 @@ jobs:
     - uses: Azure/mysql@v1
       with:
         server-name: githubactions.database.windows.net
-        username: naveenlata
-        password: Molina@2032
-        database: githubactions/SQLGitHub
+        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         sql-file: <INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh7',7,7,7,'test1',7,'test7')>
    
    
