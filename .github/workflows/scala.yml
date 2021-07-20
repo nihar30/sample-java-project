@@ -14,9 +14,9 @@ jobs:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         dacpac-package: './Database.dacpac'
-    - name: Execute Insert Query
-      uses: azure/sql-action@v1
+    - uses: Insert_Query
       with:
+        server-name: githubactions.database.windows.net
+        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         queries: <INSERT INTO dbo.ErrorLog VALUES (02/12/2022,'Sandeep',1,2,3,'test',2,'test')>
-
-   
+    
