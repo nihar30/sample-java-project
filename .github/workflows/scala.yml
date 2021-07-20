@@ -11,6 +11,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - uses: azure/sql-action@v1
       with:
-        server-name: admininfy.database.windows.net
+        server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         dacpac-package: './Database.dacpac'
