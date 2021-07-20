@@ -13,7 +13,7 @@ jobs:
       with:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-        sql-file: <INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh71',7,7,7,'test1',7,'test7')>
+        sql-file: INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh71',7,7,7,'test1',7,'test7')
    
    
    
