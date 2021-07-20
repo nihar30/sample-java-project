@@ -17,7 +17,6 @@ jobs:
     - uses: Azure/mysql@v1
       with:
         server-name: githubactions.database.windows.net
-        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         username: naveenlata
         password: Molina@2032
         database: githubactions/SQLGitHub
