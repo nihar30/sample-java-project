@@ -14,5 +14,5 @@ jobs:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         dacpac-package: './Database.dacpac'
-        sql-file: <INSERT INTO dbo.ErrorLog VALUES (02/12/2022,'rajesh',1,2,3,'test',2,'test')>
+        sql-file: <INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh7',7,7,7,'test1',7,'test7')>
    
