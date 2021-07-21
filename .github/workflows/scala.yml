@@ -24,17 +24,17 @@ jobs:
       uses: jcputney/git-commit-data-action@v1.x
 
     - name: Print git commit data
-      uses: |
+      run: |
         echo "Get author info"
-        echo " - ${{ GIT_COMMIT_AUTHOR }}"
-        echo " - ${{ GIT_COMMIT_AUTHOR_NAME }}"
-        echo " - ${{ GIT_COMMIT_AUTHOR_EMAIL }}"
+        echo " - ${{ env.GIT_COMMIT_AUTHOR }}"
+        echo " - ${{ env.GIT_COMMIT_AUTHOR_NAME }}"
+        echo " - ${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"
         echo "Get committer info"
-        echo " - ${{ GIT_COMMIT_COMMITTER }}"
-        echo " - ${{ GIT_COMMIT_COMMITTER_NAME }}"
-        echo " - ${{ GIT_COMMIT_COMMITTER_EMAIL }}"
+        echo " - ${{ env.GIT_COMMIT_COMMITTER }}"
+        echo " - ${{ env.GIT_COMMIT_COMMITTER_NAME }}"
+        echo " - ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}"
         echo "Get commit info"
-        echo " - ${{ GIT_COMMIT_MESSAGE }}"
+        echo " - ${{ env.GIT_COMMIT_MESSAGE }}"
 
        
    
