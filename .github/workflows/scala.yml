@@ -14,6 +14,11 @@ jobs:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         dacpac-package: './Database.dacpac'
+    - uses: azure/sql-action@v1
+      with:
+        server-name: githubactions.database.windows.net
+        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+        sql-file: './query.sql'
        
    
    
