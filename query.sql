@@ -1,1 +1,1 @@
-INSERT INTO dbo.ErrorLog VALUES (02/12/2022,'Vedanth123',1,2,3,'test',2,'test')
+INSERT INTO dbo.ErrorLog VALUES (07/21/2021,'NorthernTrust',8,8,8,'test Insert',8,'test Query')
