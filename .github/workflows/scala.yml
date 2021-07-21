@@ -9,13 +9,11 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - uses: jakublipcak-xrail/sql-action@v1
+    - uses: azure/sql-action@v1
       with:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         dacpac-package: './Database.dacpac'
-        sql-file: INSERT INTO dbo.ErrorLog VALUES (02/12/2062,'rajesh71',7,7,7,'test1',7,'test7')
-        argument: sqlpackage.exe /Action:Script /SourceFile:"C:\Users\pulipati.vedanth\Desktop\sqlpackageoutput\Database.dacpac" /TargetFile:"C:\Users\pulipati.vedanth\Desktop\sqlpackageoutput\new.dacpac" /TargetDatabaseName:"Contoso.Database" /OutputPath:"C:\Users\pulipati.vedanth\Desktop\sqlpackageoutput\output.sql"
-   
+       
    
    
