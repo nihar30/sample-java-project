@@ -26,15 +26,15 @@ jobs:
     - name: Print git commit data
       uses: |
         echo "Get author info"
-        echo " - ${{ env.GIT_COMMIT_AUTHOR }}"
-        echo " - ${{ env.GIT_COMMIT_AUTHOR_NAME }}"
-        echo " - ${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"
+        echo " - ${{ GIT_COMMIT_AUTHOR }}"
+        echo " - ${{ GIT_COMMIT_AUTHOR_NAME }}"
+        echo " - ${{ GIT_COMMIT_AUTHOR_EMAIL }}"
         echo "Get committer info"
-        echo " - ${{ env.GIT_COMMIT_COMMITTER }}"
-        echo " - ${{ env.GIT_COMMIT_COMMITTER_NAME }}"
-        echo " - ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}"
+        echo " - ${{ GIT_COMMIT_COMMITTER }}"
+        echo " - ${{ GIT_COMMIT_COMMITTER_NAME }}"
+        echo " - ${{ GIT_COMMIT_COMMITTER_EMAIL }}"
         echo "Get commit info"
-        echo " - ${{ env.GIT_COMMIT_MESSAGE }}"
+        echo " - ${{ GIT_COMMIT_MESSAGE }}"
 
        
    
