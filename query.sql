@@ -5,7 +5,7 @@ from
 
 Insert into customer
 select *
-from openjson (customer)
+from openjson ([dbo].[customer])
 with (
 	C_CUSTKEY int  '$.C_CUSTKEY',
 	C_NAME varchar(25) '$.C_NAME',
