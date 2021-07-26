@@ -20,7 +20,7 @@ jobs:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         sql-file: './query.sql'
-    - uses: ypicard/get-branch-name-github-action@v1
+ 
 
 
     
