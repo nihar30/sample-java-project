@@ -1,4 +1,6 @@
-SELECT *
-FROM OPENROWSET(BULK'./user1.json',SINGLE_BLOB) JSON
-WITH (id int '$.id', firstName nvarchar(50) '$.firstName', lastName nvarchar(50) '$.lastName',
-           age int '$.age', dateOfBirth datetime2 '$.dateOfBirth')
+INSERT INTO customer (id, name, surname, age, dateOfBirth)
+ SELECT id, firstNAme, lastName, age, dateOfBirth 
+ FROM OPENJSON(BLUCK './user1.json',SINGLE_BLOB)
+ WITH (id int,
+       firstName nvarchar(50), lastName nvarchar(50), 
+       age int, dateOfBirth datetime2)
