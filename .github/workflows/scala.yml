@@ -22,8 +22,7 @@ jobs:
         run: |
          raw=$(git branch -r --contains ${{ github.ref }})
          branch=${raw/origin\/}
-         echo ::set-env name=BRANCH::$branch
-        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2 ='${{ env.BRANCH }}'  ColValue3= '${{github.after}}' ColValue4 = '${{github.creation_date}}' ColValue5 ='${{ github.actor}}'"
+        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2 ='$branch'  ColValue3= '${{ github.after }}' ColValue4 = '${{github.creation_date}}' ColValue5 ='${{ github.actor}}'"
  
 
 
