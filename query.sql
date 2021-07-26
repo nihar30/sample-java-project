@@ -3,9 +3,9 @@ select
 from 
 	openrowset(bulk './user1.json',  single_clob) as azureblob
 
-Insert into customer
+Insert into [dbo].[customer]
 select *
-from openjson ([dbo].[customer])
+from openjson ([dbo].[customer], '$.customer)
 with (
 	C_CUSTKEY int  '$.C_CUSTKEY',
 	C_NAME varchar(25) '$.C_NAME',
