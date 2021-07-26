@@ -1,23 +1,12 @@
-{
-  "_id": "5fed1b38309495de1bc4f653",
-  "firstName": "Sims",
-  "lastName": "Arnold",
-  "isAlive": false,
-  "age": 35,
-  "address": {
-    "streetAddress": "Sumner Place",
-    "city": "Canoochee",
-    "state": "Palau",
-    "postalCode": 1558
-  },
-  "phoneNumbers": [
-    {
-      "type": "home",
-      "number": "+1 (830) 465-2965"
-    },
-    {
-      "type": "home",
-      "number": "+1 (889) 439-3632"
-    }
-  ]
-}
+[
+ { "id" : 2,"firstName": "John", "lastName": "Smith",
+   "age": 25, "dateOfBirth": "2007-03-25T12:00:00" },
+ { "id" : 5,"firstName": "John", "lastName": "Smith",
+   "age": 35, "dateOfBirth": "2005-11-04T12:00:00" },
+ { "id" : 7,"firstName": "John", "lastName": "Smith",
+   "age": 15, "dateOfBirth": "1983-10-28T12:00:00" },
+ { "id" : 8,"firstName": "John", "lastName": "Smith",
+   "age": 12, "dateOfBirth": "1995-07-05T12:00:00" },
+ { "id" : 9,"firstName": "John", "lastName": "Smith",
+   "age": 37, "dateOfBirth": "2015-03-25T12:00:00" }
+]
