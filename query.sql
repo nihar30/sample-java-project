@@ -1,4 +1,4 @@
-declare  [customer]  nvarchar(max)
+declare  [customer] 
 	 
 select [customer] =
 	BulkColumn
