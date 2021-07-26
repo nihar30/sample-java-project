@@ -1,16 +1,64 @@
-
-drop table if exists [dbo].[customer];
-create table [dbo].[customer]
-(
-	[id] [int] not null,
-	[firstName] [varchar](25) not null,
-	[lastName] [varchar](40) not null,
-	[age] [int] not null,
-	[dateOfBirth] [datetime2](15) not null,
-
-)
+select 
+	cast(bulkcolumn as nvarchar(max)) as jsondata 
+from 
+	openrowset(bulk './user1.json', single_clob) as azureblob
 go
-SELECT *
-FROM OPENJSON(@json)
-     WITH (id int, firstName nvarchar(50), lastName nvarchar(50),
-           age int, dateOfBirth datetime2)
+
+-- Read and access the content of the JSON file
+with cte as 
+(
+	select 
+		cast(bulkcolumn as nvarchar(max)) as jsondata 
+	from 
+		openrowset(bulk './user1.json', single_clob) as azureblob
+)
+select
+	j.*
+from
+	cte
+cross apply 
+	openjson(cte.jsondata) j
+go
+
+-- Read and access the content of the JSON file, with schema-on-read
+with cte as 
+(
+	select 
+		cast(bulkcolumn as nvarchar(max)) as jsondata 
+	from 
+		openrowset(bulk './user1.json', single_clob) as azureblob
+)
+select
+	j.*
+from
+	cte
+cross apply 
+	openjson(cte.jsondata) with
+	(
+		firstName nvarchar(50),
+		lastName nvarchar(50),
+		isAlive bit,
+		age int,
+		[address] nvarchar(max) as json,
+		phoneNumbers nvarchar(max) as json
+	) j
+go
+
+-- What if source is a list of json rows?
+with cte as
+(
+select 
+	cast(bulkcolumn as nvarchar(max)) as jsondata 
+from 
+	openrowset(bulk './users.json',  single_clob) as azureblob
+)
+select
+	s.[value] as jsonrow
+from
+	cte c
+cross apply
+	string_split(c.jsondata, char(10)) s
+where
+	replace(s.[value], char(13), '') <> ''
+go
+
