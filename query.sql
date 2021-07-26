@@ -2,7 +2,7 @@
 select 
 	cast(bulkcolumn as nvarchar(max)) as jsondata 
 from 
-	openrowset(bulk 'import-demo/user1.json', single_clob) as azureblob
+	openrowset(bulk 'user1.json', single_clob) as azureblob
 go
 
 -- Read and access the content of the JSON file
@@ -11,7 +11,7 @@ with cte as
 	select 
 		cast(bulkcolumn as nvarchar(max)) as jsondata 
 	from 
-		openrowset(bulk 'import-demo/user1.json', single_clob) as azureblob
+		openrowset(bulk 'user1.json', single_clob) as azureblob
 )
 select
 	j.*
@@ -27,7 +27,7 @@ with cte as
 	select 
 		cast(bulkcolumn as nvarchar(max)) as jsondata 
 	from 
-		openrowset(bulk 'import-demo/user1.json', single_clob) as azureblob
+		openrowset(bulk 'user1.json', single_clob) as azureblob
 )
 select
 	j.*
@@ -51,7 +51,7 @@ with cte as
 select 
 	cast(bulkcolumn as nvarchar(max)) as jsondata 
 from 
-	openrowset(bulk 'import-demo/users.json', single_clob) as azureblob
+	openrowset(bulk 'users.json', single_clob) as azureblob
 )
 select
 	s.[value] as jsonrow
