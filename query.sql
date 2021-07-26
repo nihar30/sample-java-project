@@ -1,6 +1,6 @@
-declare  [dbo].[customer]  varchar(max)
+declare  [customer]  varchar(max)
 	 
-select [dbo].[customer] =
+select [customer] =
 	BulkColumn
 	from openrowset(bulk './user1.json', single_clob) JSON
 
