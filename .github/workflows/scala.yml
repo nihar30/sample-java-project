@@ -21,7 +21,7 @@ jobs:
         sql-file: './query.sql'
       
           
-        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2='${{ github.ref }}' ColValue3= '${{ github.event.after }}' ColValue4 = '${{github.creation_date}}' ColValue5 ='${{ github.actor}}'"
+        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2='${{ github.ref }}' ColValue3= '${{ github.event.after }}' ColValue4 = '${{`r format(Sys.time(), '%d %B, %Y')`}}' ColValue5 ='${{ github.actor}}'"
  
 
 
