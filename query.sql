@@ -1,4 +1,4 @@
-declare  [customer] varchar(max)
+declare  [customer] nvarchar(max)
 	 
 select [customer] =
 	BulkColumn
@@ -17,4 +17,3 @@ with (
 	C_MKTSEGMENT char(10) '$.C_MKTSEGMENT',
 	C_COMMENT varchar(117) '$.C_COMMENT'
 	)
-End
