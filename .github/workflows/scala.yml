@@ -21,7 +21,9 @@ jobs:
         sql-file: './query.sql'
         run: |
          raw=$(git branch -r --contains ${{ github.ref }})
-        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2 ='${{ raw/origin\/ }}'  ColValue3= '${{ github.event.after }}' ColValue4 = '${{github.creation_date}}' ColValue5 ='${{ github.actor}}'"
+          branch=${raw/origin\/}
+          ColValue2=branch
+        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue3= '${{ github.event.after }}' ColValue4 = '${{github.creation_date}}' ColValue5 ='${{ github.actor}}'"
  
 
 
