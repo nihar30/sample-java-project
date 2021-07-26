@@ -1,8 +1,7 @@
-declare  [customer] 
-	 
-select [customer] =
-	BulkColumn
-	from openrowset(bulk './user1.json', single_clob) JSON
+select 
+	cast(bulkcolumn as nvarchar(max)) as jsondata 
+from 
+	openrowset(bulk './user1.json',  single_clob) as azureblob
 
 Insert into customer
 select *
@@ -17,3 +16,4 @@ with (
 	C_MKTSEGMENT char(10) '$.C_MKTSEGMENT',
 	C_COMMENT varchar(117) '$.C_COMMENT'
 	)
+go
