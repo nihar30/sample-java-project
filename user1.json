@@ -1,12 +1,36 @@
-[
- { "id" : 2,"firstName": "John", "lastName": "Smith",
-   "age": 25, "dateOfBirth": "2007-03-25T12:00:00" },
- { "id" : 5,"firstName": "John", "lastName": "Smith",
-   "age": 35, "dateOfBirth": "2005-11-04T12:00:00" },
- { "id" : 7,"firstName": "John", "lastName": "Smith",
-   "age": 15, "dateOfBirth": "1983-10-28T12:00:00" },
- { "id" : 8,"firstName": "John", "lastName": "Smith",
-   "age": 12, "dateOfBirth": "1995-07-05T12:00:00" },
- { "id" : 9,"firstName": "John", "lastName": "Smith",
-   "age": 37, "dateOfBirth": "2015-03-25T12:00:00" }
-]
+{
+  "EmployeeDetails": {
+    "Employee": [
+      {
+        "name": "Alvarez Walter",
+        "gender": "male",
+        "company": "PORTALINE",
+        "email": "alvarezwalter@portaline.com"
+      },
+      {
+        "name": "Luann Schwartz",
+        "gender": "female",
+        "company": "AVENETRO",
+        "email": "luannschwartz@avenetro.com"
+      },
+      {
+        "name": "Blackwell Sellers",
+        "gender": "male",
+        "company": "WATERBABY",
+        "email": "blackwellsellers@waterbaby.com"
+      },
+      {
+        "name": "Sharp Barrett",
+        "gender": "male",
+        "company": "CALCU",
+        "email": "sharpbarrett@calcu.com"
+      },
+      {
+        "name": "Webster Farley",
+        "gender": "male",
+        "company": "PERKLE",
+        "email": "websterfarley@perkle.com"
+      }
+    ]
+  }
+}
