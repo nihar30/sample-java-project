@@ -1,20 +1,8 @@
+CREATE EXTERNAL DATA SOURCE MyAzureBlobStorage
+WITH ( TYPE = BLOB_STORAGE,
+        LOCATION = 'https://sqlblobstorageaccount.blob.core.windows.net/query?sp=racwdl&st=2021-07-27T05:34:01Z&se=2021-07-27T13:34:01Z&spr=https&sv=2020-08-04&sr=c&sig=5Rr1RusIE%2FxmuH9h9JMfbA5atAaNASeSb3XOzuF7pQE%3D',
+      );
 
-drop DATABASE SCOPED CREDENTIAL MyAzureBlobStorageCredential
-drop  EXTERNAL DATA SOURCE MyAzureBlobStorage
-
-go
-print 'Creating credential'
-CREATE DATABASE SCOPED CREDENTIAL MyAzureBlobStorageCredential
-WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-SECRET = 'drop DATABASE SCOPED CREDENTIAL MyAzureBlobStorageCredential
-drop  EXTERNAL DATA SOURCE MyAzureBlobStorage
-
-go
--- Create Storage Credential
-print 'Creating credential'
-CREATE DATABASE SCOPED CREDENTIAL MyAzureBlobStorageCredential
-WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-SECRET = 'sv=2016-05-31&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-05-08T23:03:46Z&st=2017-05-08T15:03:46Z&spr=https&sig=nxxxUJXfp%2BL23%2FULs2wY3%2BYAdFewzNsqp73rcsSoge4%3D';
 
 BULK INSERT [dbo].[EmployeeDetails]
 FROM 'query/generated.json'
