@@ -4,6 +4,6 @@ WITH ( TYPE = BLOB_STORAGE,
       );
 
 
-BULK INSERT [dbo].[EmployeeDetails]
-FROM 'query/generated.json'
-WITH ( DATA_SOURCE = 'MyAzureBlobStorageAccount');
+SELECT *
+FROM OPENROWSET(BULK 'query/generated.json', DATA_SOURCE = 'MyAzureBlobStorage') as data
+
