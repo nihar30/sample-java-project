@@ -19,8 +19,6 @@ jobs:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         sql-file: './query.sql'
-        date: '`r format(Sys.time(), "%d %B, %Y")`'
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
         arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2='${{ github.ref }}' ColValue3= '${{ github.event.after }}' ColValue4 ='${{github.event.effectieve_date}}' ColValue5 ='${{ github.actor}}'"
  
 
