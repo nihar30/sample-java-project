@@ -19,7 +19,7 @@ jobs:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         sql-file: './query.sql'
-        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2='${{ github.ref }}' ColValue3= '${{ github.event.after }}' ColValue4 = '${{ github.event.commitdate }}' ColValue5 ='${{ github.actor}}'"
+        arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2='${{ github.ref }}' ColValue3= '${{ github.event.after }}' ColValue4 ='${{ github.event.sys.time() }}' ColValue5 ='${{ github.actor}}'"
  
 
 
