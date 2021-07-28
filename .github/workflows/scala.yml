@@ -7,12 +7,12 @@ jobs:
     steps:
    
     - uses: actions/checkout@v1
-      name: Azure Portal Login
     - uses: azure/login@v1
+      name: Azure Portal Login
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-      name: Azure SQL DB Login
     - uses: azure/sql-action@v1
+      name: Azure SQL DB Login
       with:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
