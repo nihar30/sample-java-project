@@ -24,7 +24,7 @@ jobs:
       with:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-        sql-file: './JScript.sql'
+        sql-file: './InsertQuery.sql'
 
 
     
