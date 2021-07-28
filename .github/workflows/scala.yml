@@ -5,21 +5,26 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+   
     - uses: actions/checkout@v1
+      name: Azure Portal Login
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+      name: Azure SQL DB Login
     - uses: azure/sql-action@v1
       with:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         dacpac-package: './Database.dacpac'
+        name: SQL Insert Query to Commit Details
     - uses: azure/sql-action@v1
       with:
         server-name: githubactions.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
         sql-file: './query.sql'
         arguments: "-v ColValue1 = '${{ github.event.repository.name }}' ColValue2='${{ github.ref }}' ColValue3= '${{ github.event.after }}' ColValue4 ='${{github.event.effectieve_date}}' ColValue5 ='${{ github.actor}}'"
+      name: SQL Insert Query to Export Data from JSON   
     - uses: azure/sql-action@v1
       with:
         server-name: githubactions.database.windows.net
