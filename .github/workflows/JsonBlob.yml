@@ -27,12 +27,12 @@ jobs:
       with:
       # Artifact name
         name: artifact
-        path: ./output1.json
+        path: ./output.json
     - name: Download a single artifact
       uses: actions/download-artifact@v2
       with:
        name: artifact
-       path : './output1.json'
+       path : './output.json'
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
@@ -43,6 +43,6 @@ jobs:
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
        name: Blob
-       path: './output1.json'
+       path: './output.json'
 
    
