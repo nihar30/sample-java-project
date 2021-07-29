@@ -38,6 +38,7 @@ jobs:
       name: Upload Artifact to Blob Storage
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+       name: Blob
        path: './output.json'
 
    
