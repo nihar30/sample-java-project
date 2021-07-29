@@ -28,12 +28,7 @@ jobs:
       # Artifact name
         name: artifact
         path: ./output.json
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.0.10
-      with:
-      # Artifact name
-        name: artifact1
-        path: ./output1.json
+    
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
@@ -43,6 +38,6 @@ jobs:
       name: Upload Artifact to Blob Storage
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-       path: './output.json'
+       path: 'https://sqlblobstorageaccount.blob.core.windows.net/query'
 
    
