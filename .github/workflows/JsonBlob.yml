@@ -27,7 +27,7 @@ jobs:
       with:
       # Artifact name
         name: artifact
-        path: ./output.json
+        path: './output1.json'
     
     - uses: actions/checkout@v1
     - uses: azure/login@v1
