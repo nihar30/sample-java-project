@@ -34,7 +34,7 @@ jobs:
       name: Azure Portal Login
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - uses: fixpoint/azblob-upload-artifact@v4
+    - uses: azblob-upload-artifact@v4
       name: Upload Artifact to Blob Storage
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
