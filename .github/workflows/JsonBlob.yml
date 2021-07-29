@@ -1,0 +1,41 @@
+name: COMMITS API
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      run: |
+       { curl https://api.github.com/repos/pulipativedanth/sample-java-project/commits | jq '.[] | {Commit_id: .sha, Commit_Date: .commit.author.date, Commit_Author: .commit.author.name}'\ &&
+       curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}';} >> "./output.json"
+       #curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}'  >> "./output.json"
+       #{ output=$ curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}'\ &&
+       #curl https://api.github.com/repos/pulipativedanth/sample-java-project/commits | jq '.[] | {Commit_id: .sha, Commit_Date: .commit.author.date, Commit_Author: .commit.author.name}';} >> "./output.json"
+       #curl \
+       #-H "Accept: application/vnd.github.v3+json" \
+       #https://api.github.com/repos/mangeshpa/HelloWorldDotNet/commits
+       echo "TAG_NAME=$(curl \
+       -H "Accept: application/vnd.github.v3+json" \
+       https://api.github.com/repos/mangeshpa/HelloWorldDotNet/stats/participation | jq '.["all"] | add')" 
+       echo "$TAG_NAME" 
+    - name: Upload a Test Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+      # Artifact name
+        name: artifact
+        path: ./output.json
+    - uses: actions/checkout@v1
+
+    - run: mkdir -p path/to/artifact
+
+    - run: echo hello > path/to/artifact/world.txt
+
+    - uses: fixpoint/azblob-upload-artifact@v4
+      with:
+       connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+       name: artifact
+       path: ./output.json
