@@ -32,7 +32,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
        name: artifact
-       path : './joutput.json'
+       path : './joutput3.json'
     - name: kamataryo__whoami
       uses: kamataryo/whoami-action@v1
     - uses: actions/checkout@v1
