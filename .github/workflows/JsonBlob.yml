@@ -11,10 +11,10 @@ jobs:
     - name: curl
       run: |
        { curl https://api.github.com/repos/pulipativedanth/sample-java-project/commits | jq '.[] | {Commit_id: .sha, Commit_Date: .commit.author.date, Commit_Author: .commit.author.name}'\ &&
-       curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}';} >> "./output.json"
-       #curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}'  >> "./output.json"
-       #{ output=$ curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}'\ &&
-       #curl https://api.github.com/repos/pulipativedanth/sample-java-project/commits | jq '.[] | {Commit_id: .sha, Commit_Date: .commit.author.date, Commit_Author: .commit.author.name}';} >> "./output.json"
+       curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}';} >> "./output1.json"
+       #curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}'  >> "./output1.json"
+       #{ output1=$ curl -X GET https://api.github.com/repos/pulipativedanth/sample-java-project | jq -r '{Reponame: .name, Branch: .default_branch}'\ &&
+       #curl https://api.github.com/repos/pulipativedanth/sample-java-project/commits | jq '.[] | {Commit_id: .sha, Commit_Date: .commit.author.date, Commit_Author: .commit.author.name}';} >> "./output1.json"
        #curl \
        #-H "Accept: application/vnd.github.v3+json" \
        #https://api.github.com/repos/pulipativedanth/sample-java-project/commits
@@ -27,12 +27,12 @@ jobs:
       with:
       # Artifact name
         name: artifact
-        path: ./output.json
+        path: ./output1.json
     - name: Download a single artifact
       uses: actions/download-artifact@v2
       with:
        name: artifact
-       path : './output.json'
+       path : './output1.json'
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
@@ -43,6 +43,6 @@ jobs:
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
        name: Blob
-       path: './output.json'
+       path: './output1.json'
 
    
