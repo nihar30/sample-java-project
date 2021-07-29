@@ -28,7 +28,11 @@ jobs:
       # Artifact name
         name: artifact
         path: './output1.json'
-    
+    - uses: actions/checkout@v2
+    - uses: actions/download-artifact@v2
+      with:
+          name: my-artifact
+          path: 'https://github.com/pulipativedanth/sample-java-project'
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
