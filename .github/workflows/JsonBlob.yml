@@ -33,6 +33,8 @@ jobs:
       with:
        name: artifact
        path : 'pulipativedanth/sample-java-project/joutput2.json'
+    - name: kamataryo__whoami
+      uses: kamataryo/whoami-action@v1
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
