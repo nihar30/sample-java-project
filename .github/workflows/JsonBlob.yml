@@ -36,7 +36,7 @@ jobs:
     - uses: fixpoint/azblob-upload-artifact@v4
       name: Upload Artifact to Blob Storage
       with:
-        creds: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-        path: ./output.json
+       connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+       path: './output.json'
 
    
