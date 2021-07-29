@@ -22,7 +22,10 @@ jobs:
        -H "Accept: application/vnd.github.v3+json" \
        https://api.github.com/repos/pulipativedanth/sample-java-project/stats/participation | jq '.["all"] | add')" 
        echo "$TAG_NAME" 
-       #curl https://github.com/pulipativedanth/sample-java-project --token ATGK2XM7JKUSP27IU7GWAJLBAKNMS
+  jobs:
+
+    runs-on: windows-latest
+    steps:
     - name: Upload a Test Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
@@ -33,7 +36,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
        name: artifact
-       path : 'pulipativedanth/sample-java-project/joutput2.json'
+       path : './joutput2.json'
     - name: kamataryo__whoami
       uses: kamataryo/whoami-action@v1
     - uses: actions/checkout@v1
