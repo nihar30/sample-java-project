@@ -28,6 +28,15 @@ jobs:
       # Artifact name
         name: artifact
         path: ./output.json
-    
+    - uses: actions/checkout@v1
+    - uses: azure/login@v1
+      name: Azure Portal Login
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: fixpoint/azblob-upload-artifact@v4
+      name: Upload Artifact to Blob Storage
+      with:
+        creds: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        path: ./output.json
 
    
