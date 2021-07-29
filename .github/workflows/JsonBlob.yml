@@ -43,6 +43,6 @@ jobs:
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
        name: Blob
-       path: './joutput1.json'
+       path: '/home/runner/work/sample-java-project/sample-java-project/pulipativedanth/sample-java-project/joutput2.json'
 
    
