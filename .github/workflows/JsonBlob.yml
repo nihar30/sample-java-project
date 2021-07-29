@@ -22,6 +22,13 @@ jobs:
        -H "Accept: application/vnd.github.v3+json" \
        https://api.github.com/repos/pulipativedanth/sample-java-project/stats/participation | jq '.["all"] | add')" 
        echo "$TAG_NAME" 
+       mkdir actions-runner && cd actions-runner
+       #curl -o actions-runner-linux-x64-2.279.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.279.0/actions-runner-linux-x64-2.279.0.tar.gz
+        echo "50d21db4831afe4998332113b9facc3a31188f2d0c7ed258abf6a0b67674413a  actions-runner-linux-x64-2.279.0.tar.gz" | shasum -a 256 -c
+        tar xzf ./actions-runner-linux-x64-2.279.0.tar.gz
+        ./config.sh --url https://github.com/pulipativedanth/sample-java-project --token ATGK2XMFKTSYUBD5WFJZ3PDBAKR6Q
+        ./run.sh
+       runs-on: self-hosted
     - name: Upload a Test Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
