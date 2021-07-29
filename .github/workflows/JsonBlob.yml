@@ -22,10 +22,6 @@ jobs:
        -H "Accept: application/vnd.github.v3+json" \
        https://api.github.com/repos/pulipativedanth/sample-java-project/stats/participation | jq '.["all"] | add')" 
        echo "$TAG_NAME" 
-  jobs:
-
-    runs-on: windows-latest
-    steps:
     - name: Upload a Test Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
