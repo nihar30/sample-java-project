@@ -28,6 +28,10 @@ jobs:
       # Artifact name
         name: artifact
         path: ./output.json
+    - name: Download a single artifact
+      uses: actions/download-artifact@v2
+      with:
+       name: my-artifact
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
