@@ -32,7 +32,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
        name: artifact
-       path : './joutput1.json'
+       path : 'pulipativedanth/sample-java-project/joutput2.json'
     - uses: actions/checkout@v1
     - uses: azure/login@v1
       name: Azure Portal Login
