@@ -34,10 +34,11 @@ jobs:
       name: Azure Portal Login
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - uses: azblob-upload-artifact@v4
+    - uses: fixpoint/azblob-upload-artifact@v4
       name: Upload Artifact to Blob Storage
       with:
        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-       path: 'https://sqlblobstorageaccount.blob.core.windows.net/query'
+       name: Blob
+       path: './output.json'
 
    
