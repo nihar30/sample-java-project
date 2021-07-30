@@ -34,6 +34,11 @@ jobs:
       with:
        name: artifact
        path : './joutput3.json'
+    - run: |
+        cd /home/runner/work/sample-java-project/sample-java-project/
+        ls -ltrR
+        cd ./
+        ls -ltrR
     - name: kamataryo__whoami
       uses: kamataryo/whoami-action@v1
     - uses: actions/checkout@v1
