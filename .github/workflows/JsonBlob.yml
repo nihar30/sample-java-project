@@ -38,7 +38,7 @@ jobs:
         cd /home/runner/work/sample-java-project/sample-java-project/
         ls -ltrR
         echo "After "
-        cd ./c
+        cd ./
         ls -ltrR
     - name: kamataryo__whoami
       uses: kamataryo/whoami-action@v1
